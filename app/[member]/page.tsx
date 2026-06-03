@@ -16,7 +16,7 @@ export default function MemberPage() {
         <Link href="/" style={{ fontSize: '0.8rem', color: '#666' }}>
           ← All Family Members
         </Link>
-        <h1>{member.toUpperCase()}'s Archive</h1>
+        <h1>{member.toUpperCase()}&apos;s Archive</h1>
       </div>
 
       {/* 2. YOUR TIMELINE */}

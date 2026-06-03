@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       success: true, 
       text: transcriptionResponse.text 
     });
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error('Whisper API Engine Error:', error);
     return NextResponse.json(

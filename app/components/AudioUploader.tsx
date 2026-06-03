@@ -55,8 +55,7 @@ export default function AudioUploader() {
       const filePath = `${safeMember}-${Date.now()}.${fileExt}`;
       
       console.log("Targeting Safe Supabase Path:", filePath);
-
-      // 4. Send the raw file payload directly to your Supabase Storage Bucket
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
       const { data: storageData, error: storageError } = await supabase.storage
         .from('family-media')
         .upload(filePath, file);
@@ -86,10 +85,10 @@ export default function AudioUploader() {
         ]);
 
       if (dbError) throw dbError;
-
       setStatus('success');
     } catch (err: any) {
       console.error("Supabase Operation Failed:", err);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       setStatus('error');
       setErrorMessage(err.message || 'An unexpected transmission crash occurred.');
     }
